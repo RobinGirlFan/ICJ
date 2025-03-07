@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 AI Accessibility Chatbot 🌸</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #FFE4E1;
+            background-image: url('https://www.transparenttextures.com/patterns/flower-field.png');
+        }
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #FFB6C1;
+            font-size: 16px;
+            background-color: #FFF0F5;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            background-color: #FF69B4;
+            color: white;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #FF1493;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border: 3px dashed #FFB6C1;
+        }
+        .header-img {
+            width: 100px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+        h3 {
+            color: #FF1493;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Flower Icon" class="header-img">
+        <h1>🌸 AI Accessibility Chatbot 🌸</h1>
+        <p>Type your message and let AI speak for you with a cute touch! 💕</p>
+        <textarea id="textInput" placeholder="Type your message here..."></textarea>
+        <br>
+        <button onclick="speakText()">🔊 Speak</button>
+        <div class="footer">
+            <p>This chatbot is designed to make communication easier and more accessible for everyone. 🌼</p>
+            <h3>🌟 Advantages of this Chatbot 🌟</h3>
+            <ul style="text-align: left; display: inline-block;">
+                <li>✅ Enhances communication for people with speech impairments (Now you don’t need to mime like a silent movie star 🎬😂)</li>
+                <li>✅ Improves accessibility for users with disabilities (Because everyone deserves to be heard—literally! 🎤💖)</li>
+                <li>✅ Easy-to-use interface with a cute and friendly design (So adorable, even your grandma will want to use it! 👵🌸)</li>
+                <li>✅ Supports multiple languages and customizable speech settings (Now you can sound like a robot or a Shakespearean actor! 🎭🤖)</li>
+                <li>✅ Useful for educational purposes and language learning (Ever wanted to impress your friends with perfect French? Voilà! 🇫🇷📖)</li>
+            </ul>
+            <h3>Why You Need This Chatbot 🌸</h3>
+            <p>
+                This chatbot is more than just a tool—it's about **making communication easier and more accessible for everyone**! Whether you're someone with a speech impairment or someone who prefers not to speak, this chatbot allows you to express yourself by typing and having your message spoken aloud. It can also help learners practice languages and pronunciation in a fun, easy way.
+            </p>
+            <p>
+                With its simple interface and cute design, this chatbot can be used by anyone, even those who may not be tech-savvy. The goal is to ensure that **no one is left out of conversations**, regardless of their ability to speak or type. Everyone deserves to be heard!
+            </p>
+            <p>Contact: <a href="mailto:geetikavijaykumar@gmail.com">geetikavijaykumar@gmail.com</a></p>
+            <p>Collaborated by: <strong>Sandooq Al Watan | Microsoft | The Future Force</strong></p>
+            <img src="/mnt/data/A_modern_and_fun_logo_for_'The_Future_Force'_featu.png" alt="Future Force Logo" width="150">
+        </div>
+    </div>
+    
+    <script>
+        function speakText() {
+            let text = document.getElementById("textInput").value.trim();
+            if (text === "") {
+                alert("Please enter some text first! 🌼 (I may be an AI, but I can’t read your mind… yet! 🤖😂)");
+                return;
+            }
+            let speech = new SpeechSynthesisUtterance(text);
+            speech.lang = "en-US"; 
+            speech.rate = 1; 
+            speech.pitch = 1.2; 
+            // Check if SpeechSynthesis is supported
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.speak(speech);
+            } else {
+                alert("Oops! Your browser doesn't support Speech Synthesis. Try a modern browser like Chrome or Firefox! 🌸");
+            }
+        }
+    </script>
+</body>
+</html>
